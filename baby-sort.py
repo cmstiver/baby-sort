@@ -24,7 +24,7 @@ class Stack:
         return self.size == 0
 
     def peek(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("Peeking from an empty stack")
         return self.head.next.value
 
@@ -35,7 +35,7 @@ class Stack:
         self.size += 1
 
     def pop(self):
-        if self.isEmpty():
+        if self.is_empty():
             raise Exception("Popping from an empty stack")
         remove = self.head.next
         self.head.next = self.head.next.next
