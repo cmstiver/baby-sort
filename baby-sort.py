@@ -41,3 +41,10 @@ class Stack:
         self.head.next = self.head.next.next
         self.size -= 1
         return remove.value
+
+
+class Cups:
+    cups_stack = Stack()
+
+    def baby_sort():
+        pass
