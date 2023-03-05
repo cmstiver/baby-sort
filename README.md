@@ -1,6 +1,6 @@
 # This is a meme algorithm based on this short video:
 
-<video src="https://youtube.com/shorts/X2ozuxtfDB4" controls="controls" style="max-width: 730px;"></video>
+https://youtube.com/shorts/X2ozuxtfDB4
 
 ## Example of it running:
 
