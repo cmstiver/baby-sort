@@ -2,7 +2,7 @@
 
 https://youtube.com/shorts/X2ozuxtfDB4
 
-## Example of it running:
+## Example output:
 
 ```
 Sorting list [8, 6, 1, 5, 4, 10, 2, 3, 7, 9] into a stack.
