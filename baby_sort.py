@@ -1,3 +1,6 @@
+import random
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -15,7 +18,7 @@ class Stack:
         while cur:
             out += str(cur.value) + "->"
             cur = cur.next
-        return out[:-3]
+        return out
 
     def get_size(self):
         return self.size
@@ -25,7 +28,7 @@ class Stack:
 
     def peek(self):
         if self.is_empty():
-            raise Exception("Peeking from an empty stack")
+            return None
         return self.head.next.value
 
     def push(self, value):
@@ -43,8 +46,54 @@ class Stack:
         return remove.value
 
 
-class Cups:
-    stack = Stack()
+class CupGame:
+    @staticmethod
+    def create_cups(amount):
+        cup_list = list(range(1, amount + 1))
+        random.shuffle(cup_list)
+        return cup_list
 
-    def baby_sort():
-        pass
+    def baby_sort(self, cups_list: list, stack: Stack):
+        print(f"Sorting list {cups_list} into a stack.")
+
+        while True:
+            top = stack.peek()
+
+            if len(cups_list) > 1:
+                index = random.randrange(len(cups_list) - 1)
+            elif len(cups_list) == 1:
+                index = 0
+            else:
+                return stack
+
+            cup_size = cups_list[index]
+            print(
+                f"Attempting to fit cup with the size of {cup_size} into top cup...")
+            if top == None:
+                print("None.")
+            else:
+                print(stack)
+
+            if top == None:
+                cup = cups_list.pop(index)
+                stack.push(cup)
+                print(stack)
+            elif cup_size < top:
+                cup = cups_list.pop(index)
+                stack.push(cup)
+                print(stack)
+            elif cup_size > top:
+                print(
+                    "\033[1;31;40mRemoving cups from top until this cup fits:\033[0m")
+                while top != None and cup_size > top:
+                    cup = stack.pop()
+                    cups_list.append(cup)
+                    top = stack.peek()
+                    if top == None:
+                        print("\033[1;31;40mNone.\033[0m")
+                    else:
+                        print(f"\033[1;31;40m{stack}\033[0m")
+
+                cup = cups_list.pop(index)
+                stack.push(cup)
+                print(stack)
