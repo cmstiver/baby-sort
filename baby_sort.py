@@ -52,8 +52,9 @@ class CupGame:
         cup_list = list(range(1, amount + 1))
         random.shuffle(cup_list)
         return cup_list
-
-    def baby_sort(self, cups_list: list, stack: Stack):
+    
+    @staticmethod
+    def baby_sort(cups_list: list, stack: Stack):
         print(f"Sorting list {cups_list} into a stack.")
 
         while True:
