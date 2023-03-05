@@ -1,6 +1,6 @@
 # This is a meme algorithm based on this short video:
 
-<video src="./baby_sort_example.mp4" controls="controls" style="max-width: 730px;"></video>
+<video src="https://youtube.com/shorts/X2ozuxtfDB4" controls="controls" style="max-width: 730px;"></video>
 
 ## Example of it running:
 
